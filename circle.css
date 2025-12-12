@@ -1,0 +1,14 @@
+div{
+    border-radius: 70%;
+    background-color: aqua;
+    border-color: black;
+    border-style: dotted;
+    color: burlywood;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    text-align: center;
+    line-height: 100px;
+    justify-content: space-around;
+    flex-direction: row;
+}
