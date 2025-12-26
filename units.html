@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units Example</title>
+
+    <style>
+        html {
+            font-size: 16px; /* Base font size; change to 10px to see effect on rem */
+        }
+
+        .px {
+            font-size: 24px; /* Absolute size in pixels */
+        }
+
+        .rem {
+            font-size: 2rem; /* Relative to html font size */
+        }
+
+        .box {
+            width: 50%;       /* 50% of parent/container width */
+            height: 20vh;     /* 20% of viewport height */
+            background-color: coral;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="px">Heading 1 (24px)</h1>
+    <h1 class="rem">Heading 2 (2rem)</h1>
+    <div class="box"></div>
+
+</body>
+</html>
