@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABES Engineering College | Home</title>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f6f9;
+        }
+
+    
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-bg iframe {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+        header {
+            background-color: rgba(0, 33, 71, 0.9);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: rgba(0, 64, 128, 0.9);
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            flex: 1;
+            color: white;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .box {
+            background-color: rgba(255,255,255,0.9);
+            color: black;
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: rgba(0, 33, 71, 0.95);
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="video-bg">
+    <iframe 
+        src="https://www.youtube.com/embed/vGoiqOA6O2g?autoplay=1&mute=1&loop=1&playlist=vGoiqOA6O2g&controls=0&modestbranding=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div class="overlay"></div>
+
+<header>
+    <h1>ABES Engineering College</h1>
+    <p>Affiliated to AKTU | Approved by AICTE</p>
+    
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="details.html">About</a>
+    <a href="details.html">Courses</a>
+    <a href="details.html">Facilities</a>
+    <a href="details.html">Contact</a>
+</nav>
+
+<main>
+    <section class="hero">
+        <h2>Welcome to ABES Engineering College</h2>
+        <p>
+            Empowering students with quality education, innovation
+            and industry-ready skills for a better future.
+        </p>
+    </section>
+
+    <div class="container">
+        <div class="box">
+            <h3>Quality Education</h3>
+            <p>Experienced faculty and modern teaching methods.</p>
+        </div>
+
+        <div class="box">
+            <h3>Infrastructure</h3>
+            <p>Advanced labs, library and Wi-Fi campus.</p>
+        </div>
+
+        <div class="box">
+            <h3>Placements</h3>
+            <p>Strong placement support and career guidance.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 ABES Engineering College | Student Project</p>
+</footer>
+
+</body>
+</html>
