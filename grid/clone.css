@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    height: 60px;
+    background-color: #131921;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff9900;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    width: 40%;
+}
+
+.search-box input {
+    width: 80%;
+    padding: 8px;
+    border: none;
+}
+
+.search-box button {
+    width: 20%;
+    background-color: #ff9900;
+    border: none;
+    cursor: pointer;
+}
+
+/* Nav Links */
+.nav-links p {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.cart {
+    font-weight: bold;
+}
+
+/* Banner */
+.banner {
+    background-color: #e3e6e6;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    font-size: 36px;
+}
+
+/* Products */
+.products {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #f3f3f3;
+}
+
+.product {
+    background-color: white;
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.product p {
+    color: #007185;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #131921;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+footer p {
+    margin: 5px 0;
+}
