@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Clone</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+
+<nav class="bg-[#131921] text-white">
+   
+        <div class="max-w-full px-4 py-3 flex items-center gap-4">
+
+
+    <!-- Logo + Address -->
+<div class="flex items-center gap-4">
+
+    <!-- Amazon Logo -->
+    <div class="cursor-pointer w-32">
+
+        <svg 
+            viewBox="0 0 300 100"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Amazon Text -->
+            <text
+                x="10"
+                y="55"
+                font-size="55"
+                font-family="Arial, sans-serif"
+                font-weight="bold"
+                fill="white">
+                amazon
+            </text>
+
+            <!-- Orange Smile -->
+            <path
+                d="M45 72 C105 105, 210 105, 260 65"
+                stroke="#FF9900"
+                stroke-width="8"
+                fill="none"
+                stroke-linecap="round"
+            />
+
+            <!-- Arrow head -->
+            <polygon
+                points="260,65 245,58 250,75"
+                fill="#FF9900"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- Address -->
+    <div class="hidden md:block">
+
+        <p class="text-xs text-gray-300">
+            Delivering to Ghaziabad 201009
+        </p>
+
+        <p class="font-semibold">
+            📍 Update location
+        </p>
+
+    </div>
+
+
+</div>
+
+   
+    <div class="flex flex-1">
+
+    <select
+        class="bg-gray-200 text-black px-2 rounded-l-md border-r">
+
+        <option>All</option>
+        <option>Electronics</option>
+        <option>Mobiles</option>
+        <option>Fashion</option>
+        <option>Books</option>
+        <option>Home</option>
+        <option>Appliances</option>
+        <option>Beauty</option>
+
+    </select>
+
+    <input
+        type="text"
+        placeholder="Search Amazon.in"
+        class="w-full px-4 py-2 text-black outline-none"
+    >
+
+    <button
+        class="bg-yellow-400 px-5 rounded-r-md hover:bg-yellow-500">
+
+        🔍
+
+    </button>
+
+</div>
+
+    <!-- Right Menu -->
+    <div class="hidden md:flex items-center gap-6">
+
+        <div class="hidden md:flex items-center gap-1">
+
+    <span>🇮🇳</span>
+
+    <select class="bg-transparent text-white">
+
+        <option>EN</option>
+
+        <option>HI</option>
+
+    </select>
+
+</div>
+        <div>
+            <p class="text-xs">Hello, Sign In</p>
+            <p class="font-bold">Account</p>
+        </div>
+
+        <div>
+            <p class="text-xs">Returns</p>
+            <p class="font-bold">& Orders</p>
+        </div>
+
+        <div
+    onclick="toggleCart()"
+    class="font-bold text-lg relative cursor-pointer">
+
+    🛒 Cart
+
+    <span
+        id="cartCount"
+        class="absolute -top-2 -right-4 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full">
+        0
+    </span>
+
+</div>
+
+    </div>
+
+</div>
+
+
+</nav>
+
+<!-- Menu -->
+
+
+<div class="bg-[#232F3E] text-white">
+
+    <div class="px-4 py-2 flex gap-6 overflow-x-auto text-sm">
+
+        <a href="#" class="whitespace-nowrap">☰ All</a>
+
+        <a href="#" class="whitespace-nowrap">Fresh</a>
+
+        <a href="#" class="whitespace-nowrap">MX Player</a>
+
+        <a href="#" class="whitespace-nowrap">Sell</a>
+
+        <a href="#" class="whitespace-nowrap">Bestsellers</a>
+
+        <a href="#" class="whitespace-nowrap">Mobiles</a>
+
+        <a href="#" class="whitespace-nowrap">Customer Service</a>
+
+        <a href="#" class="whitespace-nowrap">Today's Deals</a>
+
+        <a href="#" class="whitespace-nowrap">New Releases</a>
+
+        <a href="#" class="whitespace-nowrap">Prime</a>
+
+        <a href="#" class="whitespace-nowrap">Fashion</a>
+
+        <a href="#" class="whitespace-nowrap">Electronics</a>
+
+        <a href="#" class="whitespace-nowrap">Amazon Pay</a>
+
+        <a href="#" class="whitespace-nowrap">Home & Kitchen</a>
+
+        <a href="#" class="whitespace-nowrap">Computers</a>
+
+        <a href="#" class="whitespace-nowrap">Books</a>
+
+        <a href="#" class="whitespace-nowrap">Toys</a>
+
+    </div>
+
+</div>
+
+<!-- Hero Slider -->
+
+<section class="relative">
+
+<img
+    id="slider"
+    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600"
+    class="w-full h-[220px] sm:h-[320px] md:h-[450px] lg:h-[550px] object-cover"
+    alt="Banner"
+>
+
+<button
+    onclick="prevSlide()"
+    class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white px-4 py-2 rounded-full text-xl">
+    ❮
+</button>
+
+<button
+    onclick="nextSlide()"
+    class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white px-4 py-2 rounded-full text-xl">
+    ❯
+</button>
+
+</section>
+
+<!-- Products -->
+
+<section class="max-w-7xl mx-auto px-4 py-10">
+
+<h2 class="text-3xl font-bold mb-8">
+    Featured Products
+</h2>
+
+<div
+    id="products"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="mt-10">
+
+<div
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="bg-[#37475A] text-white text-center py-4 cursor-pointer">
+    Back to Top
+</div>
+
+<div class="bg-[#232F3E] text-white">
+
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+
+        <div>
+            <h3 class="font-bold mb-4">Get to Know Us</h3>
+            <ul class="space-y-2 text-sm">
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Press Releases</li>
+                <li>Amazon Science</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold mb-4">Connect with Us</h3>
+            <ul class="space-y-2 text-sm">
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold mb-4">Make Money with Us</h3>
+            <ul class="space-y-2 text-sm">
+                <li>Sell on Amazon</li>
+                <li>Affiliate Program</li>
+                <li>Advertise Products</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold mb-4">Help</h3>
+            <ul class="space-y-2 text-sm">
+                <li>Your Account</li>
+                <li>Returns Centre</li>
+                <li>Help Centre</li>
+                <li>Support</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="bg-[#131921] text-center text-white py-5">
+    © 2026 Amazon Clone | HTML + Tailwind CSS + JavaScript
+</div>
+
+</footer>
+<!-- Cart Sidebar -->
+
+<div
+    id="cartSidebar"
+    style="
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:400px;
+        max-width:100%;
+        height:100%;
+        background:white;
+        z-index:9999;
+        overflow-y:auto;
+        transition:0.3s;
+        box-shadow:-5px 0 20px rgba(0,0,0,.2);
+    ">
+
+    <div
+        style="
+            padding:20px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            border-bottom:1px solid #ddd;
+        ">
+
+        <h2 style="font-size:24px;font-weight:bold;">
+            Shopping Cart
+        </h2>
+
+        <button
+            onclick="toggleCart()"
+            style="
+                border:none;
+                background:none;
+                font-size:28px;
+                cursor:pointer;
+            ">
+            ×
+        </button>
+
+    </div>
+
+    <div id="cartItems" style="padding:20px;">
+        Cart is empty
+    </div>
+
+    <div
+        style="
+            border-top:1px solid #ddd;
+            padding:20px;
+            font-size:20px;
+            font-weight:bold;
+        ">
+
+        Total :
+        <span id="cartTotal">₹0</span>
+
+    </div>
+
+</div>
+
+<div
+    id="overlay"
+    onclick="toggleCart()"
+    style="
+        display:none;
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,.5);
+        z-index:9998;
+    ">
+</div>
+
+<script>
+
+/* Hero Slider */
+
+const images = [
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600",
+    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1600",
+    "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=1600",
+    "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1600"
+];
+
+let current = 0;
+
+function showSlide(index) {
+    document.getElementById("slider").src = images[index];
+}
+
+function nextSlide() {
+    current = (current + 1) % images.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + images.length) % images.length;
+    showSlide(current);
+}
+
+setInterval(nextSlide, 3000);
+
+/* Cart */
+
+let cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+function saveCart() {
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+}
+
+function updateCartCount() {
+
+    document.getElementById(
+        "cartCount"
+    ).innerText = cart.reduce(
+        (sum,item) => sum + item.quantity,
+        0
+    );
+}
+
+function addToCart(name,price,image) {
+
+    const existing =
+        cart.find(item => item.name === name);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            name,
+            price,
+            image,
+            quantity:1
+        });
+    }
+
+    saveCart();
+
+    updateCartCount();
+
+    renderCart();
+}
+
+function removeFromCart(index){
+
+    cart.splice(index,1);
+
+    saveCart();
+
+    updateCartCount();
+
+    renderCart();
+}
+
+function renderCart(){
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+    if(cart.length===0){
+
+        cartItems.innerHTML =
+            "<p>Cart is empty</p>";
+
+        cartTotal.innerText = "₹0";
+
+        return;
+    }
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item,index)=>{
+
+        const numericPrice =
+            parseInt(
+                item.price.replace(/[₹,]/g,"")
+            );
+
+        total +=
+            numericPrice * item.quantity;
+
+        cartItems.innerHTML += `
+
+            <div
+                style="
+                    display:flex;
+                    gap:10px;
+                    border-bottom:1px solid #ddd;
+                    padding:10px 0;
+                ">
+
+                <img
+                    src="${item.image}"
+                    width="80"
+                    height="80"
+                    style="
+                        object-fit:cover;
+                        border-radius:8px;
+                    ">
+
+                <div>
+
+                    <h4 style="font-weight:bold;">
+                        ${item.name}
+                    </h4>
+
+                    <p>${item.price}</p>
+
+                    <p>
+                        Quantity :
+                        ${item.quantity}
+                    </p>
+
+                    <button
+                        onclick="removeFromCart(${index})"
+                        style="
+                            color:red;
+                            border:none;
+                            background:none;
+                            cursor:pointer;
+                        ">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+    });
+
+    cartTotal.innerText =
+        "₹" +
+        total.toLocaleString("en-IN");
+}
+
+function toggleCart(){
+
+    const sidebar =
+        document.getElementById(
+            "cartSidebar"
+        );
+
+    const overlay =
+        document.getElementById(
+            "overlay"
+        );
+
+    if(sidebar.style.right==="0px"){
+
+        sidebar.style.right="-100%";
+
+        overlay.style.display="none";
+
+    }else{
+
+        sidebar.style.right="0";
+
+        overlay.style.display="block";
+    }
+}
+
+updateCartCount();
+
+renderCart();
+
+/* Products */
+
+const products = [
+    {
+        name: "Laptop",
+        price: "₹55,999",
+        image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+    },
+    {
+        name: "Smartphone",
+        price: "₹24,999",
+        image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"
+    },
+    {
+        name: "Headphones",
+        price: "₹2,999",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+    },
+    {
+        name: "Smart Watch",
+        price: "₹4,999",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+    },
+    {
+        name: "Camera",
+        price: "₹39,999",
+        image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500"
+    },
+    {
+        name: "Gaming Mouse",
+        price: "₹1,499",
+        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500"
+    },
+    {
+        name: "Keyboard",
+        price: "₹2,299",
+        image: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500"
+    },
+    {
+        name: "Bluetooth Speaker",
+        price: "₹3,999",
+        image: "https://images.unsplash.com/photo-1589003077984-894e133dabab?w=500"
+    }
+];
+
+const productContainer = document.getElementById("products");
+
+products.forEach(product => {
+
+    productContainer.innerHTML += `
+        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="w-full h-48 object-cover"
+            >
+
+            <div class="p-4">
+
+                <h3 class="font-bold text-lg">${product.name}</h3>
+
+                <p class="text-green-600 font-bold mt-2">
+                    ${product.price}
+                </p>
+
+                <button
+                    onclick="addToCart('${product.name}','${product.price}','${product.image}')"
+                    class="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 py-2 rounded-md font-semibold">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+    `;
+});
+
+</script>
+
+</body>
+</html>
